@@ -9,13 +9,18 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-#exec_always --no-startup-id killall polybar
+set $mod Mod4
+exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+
+#Hide window title bar
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:MesloLGS Nerd Font Mono 12
+font pango:MesloLGS Nerd Font Mono 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -51,7 +56,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -184,4 +189,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
