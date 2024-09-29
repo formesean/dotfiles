@@ -12,6 +12,9 @@
 set $mod Mod4
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+exec --no-startup-id i3-msg 'workspace 2; exec chromium'
+exec --no-startup-id i3-msg 'workspace 3; exec discord'
+exec --no-startup-id i3-msg 'workspace 4; exec spotify'
 
 #Hide window title bar
 default_border pixel 1
