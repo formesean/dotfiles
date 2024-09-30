@@ -25,6 +25,8 @@ assign [class="Spotify"] workspace 4
 assign [class="pavucontrol"] workspace 5
 
 bindsym $mod+space exec rofi -show combi
+bindsym $mod+Tab exec rofi -show window
+bindsym $mod+period exec rofi -show emoji
 
 # Screenshot
 bindsym $mod+Shift+P exec --no-startup-id maim "/home/parmesean/Pictures/$(date).png"

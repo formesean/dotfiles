@@ -7,7 +7,7 @@
     fg-col: #cdd6f4;
     fg-col2: #f38ba8;
     grey: #6c7086;
-    width: 600;
+    width: 700;
     font: "MesloLGS Nerd Font Mono 16";
 }
 
@@ -17,7 +17,7 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 360px;
+    height: 400px;
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
@@ -57,9 +57,9 @@ entry {
 listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
-    margin: 10px 0px 0px 20px;
-    columns: 2;
-    lines: 5;
+    margin: 10px 0px 0px 10px;
+    columns: 1;
+    lines: 6;
     background-color: @bg-col;
 }
 
