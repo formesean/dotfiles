@@ -13,18 +13,26 @@ set $mod Mod4
 exec --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-exec --no-startup-id i3-msg 'workspace 2; exec chromium'
+exec --no-startup-id i3-msg 'workspace 2; exec brave'
 exec --no-startup-id i3-msg 'workspace 3; exec discord'
 exec --no-startup-id i3-msg 'workspace 4; exec spotify'
 exec --no-startup-id i3-msg 'workspace 5; exec pavucontrol'
 
 assign [class="Alacritty"] workspace 1
-assign [class="Chromium"] workspace 2
+assign [class="Brave"] workspace 2
 assign [class="discord"] workspace 3
 assign [class="Spotify"] workspace 4
 assign [class="pavucontrol"] workspace 5
 
 bindsym $mod+space exec rofi -show combi
+
+# Screenshot
+bindsym $mod+Shift+P exec --no-startup-id maim "/home/parmesean/Pictures/$(date).png"
+bindsym $mod+Shift+S exec --no-startup-id maim --select  "/home/parmesean/Pictures/$(date).png"
+
+# Clipboard Screenshot
+#bindsym $mod+Shift+P exec --no-startup-id maim "/home/parmesean/Pictures/$(date)"
+#bindsym $mod+Shift+S exec --no-startup-id maim --select  "/home/parmesean/Pictures/$(date)"
 
 #Hide window title bar
 default_border pixel 1
