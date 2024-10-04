@@ -4,10 +4,14 @@
   "modules-center": [
       "hyprland/window",
       ],
-  "modules-right": ["network", "pulseaudio", "battery", "clock", "custom/powermenu"],
+  "modules-right": ["network", "pulseaudio", "battery", "clock", "clock#date", "custom/powermenu"],
   "clock": {
-    "format": "<span foreground='#f5c2e7'> </span>{:%a %B %d, %Y %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "  {:%H:%M}",
+    "tooltip": false,
+  },
+  "clock#date": {
+    "format": "  {:%b %d, %Y}",
+    "tooltip-format": "{:%A}",
   },
   "battery": {
     "states": {
@@ -17,19 +21,22 @@
     "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
     "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
     "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
-    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
     "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
     "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-icons": ["", "", "", "", ""],
-    "tooltip-format": "{time}"
+    "tooltip-format": "{timeTo}"
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "  {signalStrength}%",
+    "format-disconnected": "󰤭",
+    "on-click": "rofi-wifi-menu",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid}",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
   },
   "pulseaudio": {
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
